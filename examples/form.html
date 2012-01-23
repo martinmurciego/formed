@@ -1,0 +1,8 @@
+<div>
+<%- form.start( Product.build() ) %>
+  <div><%- form.input('title', {type: 'text', required: null}) %></div>
+  <div><%- form.textarea('description', {required: null}) %></div>
+  <div><%- form.input('image', {type: 'file', required: null}) %></div>
+  <div><%- form.submit('Save', {class: 'submit'}) %></div>
+<%- form.end() %>
+</div>
