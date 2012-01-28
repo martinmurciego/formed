@@ -25,7 +25,7 @@ res.render('products/new', {form: form});
 
 And in your EJS view..
 
-``` html
+``` erb
 <div>
 <%- form.start() %>
   <div><%- form.label('title') %></div>
@@ -36,6 +36,22 @@ And in your EJS view..
   <div><%- form.input('image', {type: 'file'}) %></div>
   <div><%- form.submit('Save') %></div>
 <%- form.end() %>
+</div>
+```
+
+Which would render the following..
+
+``` html
+<div>
+<form method="POST" action="/products" id="new_product_form">
+  <div><label for="product_title" >Title</label></div>
+  <div><input name="title" type="text" id="product_title"></div>
+  <div><label for="product_description" >Description</label></div>
+  <div><textarea name="description" ></textarea></div>
+  <div><label for="product_image" >Image</label></div>
+  <div><input name="image" type="file" id="product_image"></div>
+  <div><input type="submit" value="Save" /></div>
+</form>
 </div>
 ```
 
