@@ -8,7 +8,7 @@ The first argument is object, which can be anything, but should respond to the f
 
 ``` javascript
 .isNewRecord //has this object been persisted to the DB/Store?
-.__definition.name //the name of the model, i.e 'Product', 'Book'
+.__factory.name //the name of the model, i.e 'Product', 'Book'
 ```
 and any attributes it might have like id, title etc..
 
