@@ -6,5 +6,8 @@
   "author": "Alex Barlow",
   "dependencies": {
     
+  },
+  "devDependencies": {
+    "sequelize" : ">= 0.0.1"
   }
 }
