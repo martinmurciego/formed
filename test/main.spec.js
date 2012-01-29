@@ -74,27 +74,27 @@ describe("Formed", function() {
   it("should render an text area with minimal args", function() {
     var user = User.build();
     var form = new Formed(user, '/users');
-    expect(form.textarea('name')).toBe("<textarea name=\"name\" ></textarea>");
+    expect(form.textarea('name')).toBe("<textarea name=\"name\" id=\"user_name\"></textarea>");
   });
   
   it("should render an text area with minimal args and value", function() {
     var user = User.build();
-    user.name = "Some long sentance that will be in the textarea"
+    user.name = "Some long sentence that will be in the textarea"
     var form = new Formed(user, '/users');
-    expect(form.textarea('name')).toBe("<textarea name=\"name\" >Some long sentance that will be in the textarea</textarea>");
+    expect(form.textarea('name')).toBe("<textarea name=\"name\" id=\"user_name\">Some long sentence that will be in the textarea</textarea>");
   });
   
   it("should render an text area with options", function() {
     var user = User.build();
     var form = new Formed(user, '/users');
-    expect(form.textarea('name', {class: 'name_textarea'})).toBe("<textarea name=\"name\" class=\"name_textarea\"></textarea>");
+    expect(form.textarea('name', {class: 'name_textarea'})).toBe("<textarea name=\"name\" class=\"name_textarea\" id=\"user_name\"></textarea>");
   });
   
   it("should render an text area with options and value", function() {
     var user = User.build();
     user.name = "Some long sentance that will be in the textarea"
     var form = new Formed(user, '/users');
-    expect(form.textarea('name', {class: 'name_textarea'})).toBe("<textarea name=\"name\" class=\"name_textarea\">Some long sentance that will be in the textarea</textarea>");
+    expect(form.textarea('name', {class: 'name_textarea'})).toBe("<textarea name=\"name\" class=\"name_textarea\" id=\"user_name\">Some long sentance that will be in the textarea</textarea>");
   });
   
   it("should render a submit tag", function() {
