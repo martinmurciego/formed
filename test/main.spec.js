@@ -45,6 +45,20 @@ describe("Formed", function() {
     expect(form.input('name', {})).toBe("<input name=\"name\" id=\"user_name\">");
   });
   
+  it("should render an input with an error class", function() {
+    var user = User.build();
+    var errors = user.validate();
+    var form = new Formed(user, '/users', {}, errors);
+    expect(form.input('name', {})).toBe("<input name=\"name\" id=\"user_name\" class=\"errors\">");
+  });
+  
+  it("should render an input with an error class, appended to an existing class", function() {
+    var user = User.build();
+    var errors = user.validate();
+    var form = new Formed(user, '/users', {}, errors);
+    expect(form.input('name', {class: 'test'})).toBe("<input name=\"name\" class=\"test errors\" id=\"user_name\">");
+  });
+  
   it("should render an input with minimal-ish args", function() {
     var user = User.build();
     var form = new Formed(user, '/users');
@@ -75,6 +89,20 @@ describe("Formed", function() {
     var user = User.build();
     var form = new Formed(user, '/users');
     expect(form.textarea('name')).toBe("<textarea name=\"name\" id=\"user_name\"></textarea>");
+  });
+  
+  it("should render an text area with an error class", function() {
+    var user = User.build();
+    var errors = user.validate();
+    var form = new Formed(user, '/users', {}, errors);
+    expect(form.textarea('name')).toBe("<textarea name=\"name\" id=\"user_name\" class=\"errors\"></textarea>");
+  });
+  
+  it("should render an input with an error class, appended to an existing class", function() {
+    var user = User.build();
+    var errors = user.validate();
+    var form = new Formed(user, '/users', {}, errors);
+    expect(form.textarea('name', {class: "test"})).toBe("<textarea name=\"name\" class=\"test errors\" id=\"user_name\"></textarea>");
   });
   
   it("should render an text area with minimal args and value", function() {
