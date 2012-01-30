@@ -39,6 +39,20 @@ describe("Formed", function() {
     expect(form.label('name', 'Your Name', {class: 'name_label'})).toBe("<label for=\"user_name\" class=\"name_label\">Your Name</label>");
   });
   
+  it("should render an error object with minimal args", function() {
+    var user = User.build();
+    var errors = user.validate();
+    var form = new Formed(user, '/users', {}, errors);
+    expect(form.error('name', {})).toBe("<div class=\"error\">Invalid characters: name</div>\n<div class=\"error\">String is empty: name</div>\n");
+  });
+  
+  it("should render an error object with other args", function() {
+    var user = User.build();
+    var errors = user.validate();
+    var form = new Formed(user, '/users', {}, errors);
+    expect(form.error('name', {class: 'my_error', id: 'some_id'})).toBe("<div class=\"my_error error\" id=\"some_id\">Invalid characters: name</div>\n<div class=\"my_error error\" id=\"some_id\">String is empty: name</div>\n");
+  });
+  
   it("should render an input with minimal args", function() {
     var user = User.build();
     var form = new Formed(user, '/users');
