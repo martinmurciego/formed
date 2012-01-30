@@ -63,6 +63,7 @@ Whilst Formed does not handle any validation by itself, it does include support 
 
 Consider a create action that fails using model validations..
 
+
 ``` javascript
 // models.Product is a Sequelize.js model definition
 var product = models.Product.build(req.body);
@@ -78,6 +79,8 @@ if (!errors) {
   res.render('products/new', {form: form});
 };
 ```
+
+In your view..
 
 ``` erb
 <div>
