@@ -147,3 +147,7 @@ The error object passed in, would look something like this..
 Currently, it is primarily designed, to work with Sequelize.js, a great MySQL ORM for Node.JS.
 
 It should however, be trivial to plug support into another adapter and i'm more that willing to accept patches to make the form builder more agnostic
+
+# Todo
+
+Still needs a good way of defining selects, checkboxes and similar items..
