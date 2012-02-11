@@ -2,7 +2,7 @@
   "name": "formed",
   "version": "0.0.1",
   "description": "A form builder, with default, but customisable markup, which displays validation and errors",
-  "main": "./index",
+  "main": "./lib",
   "author": "Alex Barlow",
   "dependencies": {
   },
