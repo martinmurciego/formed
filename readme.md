@@ -4,6 +4,10 @@ A form builder, with default, but customisable markup, which displays validation
 
 [![Build Status](https://secure.travis-ci.org/arbarlow/formed.png)](http://travis-ci.org/arbarlow/formed)
 
+# A Note
+
+Formed, currently works with Sequalize.JS (though can easily be made to work with any ORM). It is however, really a pre cursor to my module Iron, which is a ORM with easier validation and more javascript like DSL
+
 The first argument is object, which can be anything, but should respond to the following methods
 
 ``` javascript
